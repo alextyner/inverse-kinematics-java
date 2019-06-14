@@ -7,7 +7,7 @@ import org.teavm.jso.canvas.CanvasRenderingContext2D;
 import tyner.alex.game.util.Point;
 
 /**
- * 
+ * A Branch made up of connected Segments intertwined kinematically.
  * 
  * @author Alex Tyner
  */
@@ -18,13 +18,27 @@ public class Branch {
     private List<Segment> list;
 
     /**
-     * Constructor for the Branch.
+     * Default constructor for the Branch.
      */
     public Branch() {
-        list = new ArrayList<Segment>();
+        this(0, 0, 10.0, Segment.DEFAULT_STROKE_WEIGHT);
     }
 
-    public Segment addRoot(double x, double y, double length, double angle, double strokeWeight) {
+    /**
+     * Constructor for the Branch. Adds an initial segment with the given length and
+     * weight at the given (x, y) with a 0-degree heading.
+     * 
+     * @param x            x-coordinate
+     * @param y            y-coordinate
+     * @param length       length of initial segment
+     * @param strokeWeight weight of initial segment
+     */
+    public Branch(double x, double y, double length, double strokeWeight) {
+        list = new ArrayList<Segment>();
+        addRoot(x, y, length, 0, strokeWeight);
+    }
+
+    private Segment addRoot(double x, double y, double length, double angle, double strokeWeight) {
         if (!list.isEmpty())
             throw new IllegalArgumentException("Branch already has a root.");
         Segment s = new Segment(null, x, y, length, angle, strokeWeight);
@@ -32,7 +46,17 @@ public class Branch {
         return s;
     }
 
-    public Segment add(double length, double angle) {
+    /**
+     * Adds a segment with the same length as the initial segment and a 0-degree
+     * heading.
+     * 
+     * @return the newly added segment
+     */
+    public Segment append() {
+        return append(list.get(0).getVector().magnitude(), 0.0);
+    }
+
+    public Segment append(double length, double angle) {
         if (list.isEmpty()) {
             return addRoot(0, 0, length, angle, Segment.DEFAULT_STROKE_WEIGHT);
         }
