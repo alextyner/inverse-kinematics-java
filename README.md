@@ -11,7 +11,7 @@ This project utilizes [TeaVM](http://teavm.org/), a tool providing a Java interf
 This is a Maven project. Use Maven to build it.
 
 ```bash
-$ cd Inverse-Kinematics
+$ cd inverse-kinematics-java
 $ mvn clean package
 ```
 
