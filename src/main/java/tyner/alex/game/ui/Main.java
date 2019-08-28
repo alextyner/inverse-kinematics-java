@@ -71,7 +71,7 @@ public class Main {
     }
 
     private void followEquations() {
-        new Thread(() -> {
+        new Thread(() -> { // not the ideal solution, but the best supported by TeaVM
             try {
                 double t = 100.0;
                 double a = 1.0;
@@ -99,7 +99,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new Main(HTMLDocument.current(), motion.FOLLOW_EQUATIONS);
+        new Main(HTMLDocument.current(), motion.FOLLOW_MOUSE);
     }
 
     private HTMLCanvasElement createCanvas(HTMLDocument document, boolean fullscreen) {

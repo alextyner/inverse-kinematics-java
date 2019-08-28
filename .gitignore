@@ -5,6 +5,8 @@
 *.log
 
 target/
+.settings/
+.project
 
 # BlueJ files
 *.ctxt
