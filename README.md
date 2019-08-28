@@ -19,9 +19,9 @@ Output will include [transpiled](https://en.wikipedia.org/wiki/Source-to-source_
 
 ## Examples
 
-[Cursor Tracking](https://pages.github.ncsu.edu/atyner/Inverse-Kinematics/follow-mouse/) (fun)
+[Cursor Tracking](https://alextyner.github.io/inverse-kinematics-java/follow-mouse/) (fun)
 
-[Growing Spiral](https://pages.github.ncsu.edu/atyner/Inverse-Kinematics/grow-spiral/)
+[Growing Spiral](https://alextyner.github.io/inverse-kinematics-java/grow-spiral/)
 
-[Parametric Equations](https://pages.github.ncsu.edu/atyner/Inverse-Kinematics/para-eq/)
+[Parametric Equations](https://alextyner.github.io/inverse-kinematics-java/para-eq/)
 
